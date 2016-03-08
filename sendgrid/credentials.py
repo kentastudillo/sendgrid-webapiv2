@@ -1,4 +1,4 @@
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = 'YOUR API KEY'
 # This is will appear to originate from for your recipient
-FROM_NAME = 'Teampura'
-FROM_EMAIL = 'notifications@sym.ph'
+FROM_NAME = 'SENDER NAME'
+FROM_EMAIL = 'sender_email@mail.com'

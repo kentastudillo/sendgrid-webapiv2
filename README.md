@@ -13,7 +13,6 @@ Set your API KEY and Sender Details (If sender is constant) in credentials.py fi
 
 ```python
 SENDGRID_API_KEY = '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'
-# This is will appear to originate from for your recipient
 FROM_NAME = 'Sender'
 FROM_EMAIL = 'sender@mail.com'
 

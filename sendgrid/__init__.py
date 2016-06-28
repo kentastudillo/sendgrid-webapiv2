@@ -8,13 +8,15 @@ from credentials import *
 
 def send_via_sendgrid(
         receiver, subject, html=None,
-        plain_text=None, from_name=FROM_NAME,
+        plain_text=None, file=None, filename=None,
+        from_email=FROM_EMAIL,
+        from_name=FROM_NAME,
         reply_to=FROM_EMAIL):
 
     sg = SendGridClient(SENDGRID_API_KEY)
-    
-    if type(receiver) is list:   
-        message = Mail() 
+
+    if type(receiver) is list:
+        message = Mail()
 
         for r in receiver:
             if 'email' in r:
@@ -32,10 +34,13 @@ def send_via_sendgrid(
             if html:
                 message.set_html(html)
 
+            if file:
+                message.add_attachment(name=filename, file_=file)
+
             message.set_replyto(reply_to)
             message.set_subject(subject)
-            message.set_from(FROM_EMAIL)
-            message.set_from_name(FROM_NAME)
+            message.set_from(from_email)
+            message.set_from_name(from_name)
 
             status, msg = sg.send(message)
 

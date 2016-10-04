@@ -24,10 +24,12 @@ FROM_EMAIL = 'sender@mail.com'
 from sendgrid import *
 
 send_via_sendgrid(
-    receiver=[{'email': 'john@mail.com', 'name': 'John Doe'}], 
-    subject='This is a Subject', 
+    receiver=[{'email': 'john@mail.com', 'name': 'John Doe'}],
+    cc=[{'email': 'john@mail.com', 'name': 'John Doe'}],
+    bcc=[{'email': 'john@mail.com', 'name': 'John Doe'}],
+    subject='This is a Subject',
     html='Html Body',
-    plain_text='Text Body', 
+    plain_text='Text Body',
     from_name='Dave Doe',
     sender_email='dave@mail.com',
     reply_to='reply_to_email@mail.com'):

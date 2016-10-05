@@ -8,9 +8,9 @@ from credentials import *
 
 def send_via_sendgrid(
         receiver,
+        subject,
         cc=[],
         bcc=[],
-        subject,
         html=None,
         plain_text=None,
         file=None,
